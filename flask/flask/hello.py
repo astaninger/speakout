@@ -16,5 +16,9 @@ def login():
 def profile(username):
 	return render_template('profile.html')
 
+@app.route("/register")
+def register():
+	return render_template('signup.html')
+
 if __name__ == "__main__":
 	app.run(debug=True)
