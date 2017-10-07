@@ -3,12 +3,15 @@
 <html>
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <title> Login/SignUp </title>
+    <title> Login </title>
     <link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
-    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=viewport content="width=device-width", initial-scale=1>
+     <div class="hero1">
+                <h1>Login</h1>
+            </div>
 </head>
 
 <body>
@@ -40,22 +43,23 @@
 
         <div class="section">
             <p>
-                Email<br>
-                <input id="email" name="email" size="120" type="email" value=""><br>
-            </p>
+                <label for="email">Email</label><br>
+                <input id="email" name="email" size="40" type="email" value=""><br>
+            </p> <br>
             <p>
-                Password<br>
-                <input id="insecure_password" name="insecure_password" size="120" type="password" value=""><br>
-            </p>
+                <label for="password">Password</label><br>
+                <input id="insecure_password" name="insecure_password" size="40" type="password" value=""><br>
+            </p><br>
         </div>
-        <div id="logins">
-            <button class="login" type="submit" value="Login">Login </button>
-
-            <a class="signup" href="/signup">Sign Up</a>
-        </div>
+    
     </form>    
 
 </div>
+<div id="logins">
+            <button class="log" type="submit" value="Login">Login </button>
+
+            <a class="signup" href="/signup">Sign Up</a>
+        </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
