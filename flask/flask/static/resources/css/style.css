@@ -22,6 +22,14 @@ body {
     overflow-x: hidden;
 }
 
+.container {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/home.jpg);
+/*    background-image:  url(img/hero.jpg);*/
+    background-size: cover;
+    background-position: center;
+    height:75vh;
+}
+
 .clearfix {zoom: 1;}
 .clearfix:after {
     content: '.';
@@ -162,4 +170,7 @@ header {
     float: left;
     font-size: 90%;
     margin-top: 25px;
+}
+#logins {
+    text-align: center;
 }
