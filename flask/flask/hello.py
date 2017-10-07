@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -8,9 +8,12 @@ mongo = PyMongo(app)
 def home():
     return render_template('index.html')
 
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-	return render_template('login.html')
+    # get db connection, use model
+    if request.method == 'POST':
+        print(request.form.get('email'), request.form.get('password'))
+    return render_template('login.html')
 
 @app.route("/profile/<username>")
 def profile(username):
