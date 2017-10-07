@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Login/SignUp </title>
+</head>
+
+<body>
+    
+<div class="container">
+    <div class="row">
+        <div class="col s12 m8 l6 offset-l3 offset-m2 welcome_login">
+            <div class="logo">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <!-- Login form -->
+            <form action="" method="post" name="login">
+                <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1507373945##71b72d0ff96a81d7ca4d4644d8332a3af2578171"></div>
+                <div class="section">
+                    <p>
+                        Email<br>
+                        <input id="email" name="email" size="120" type="email" value="Enter your email"><br>
+                    </p>
+                    <p>
+                        Password<br>
+                        <input id="insecure_password" name="insecure_password" size="120" type="password" value="Enter your password"><br>
+                    </p>
+                </div>
+                <div id="logins">
+                    <button class="login" type="submit" value="Login">Login </button>
+
+                    <a class="singup" href="/signup">Sign Up</a>
+                </div>
+            </form>
+
+            <!-- Error message display -->
+            
+        </div>
+    </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript", src="/static/main.js"></script>
+</body>
+
+</html>
