@@ -1,2 +1,7 @@
+MONGO_HOST = 'ds123182.mlab.com'
+MONGO_DBNAME = 'speakout'
+MONGO_PORT = 23182
 
-MONGO_URI = 'mongodb://user:pass@ds044709.mlab.com:44709/speakout'
+SECRET_KEY = b'\x9e\xd3 \xbd\x15;1\xdb}M\x98\xce\xf7RL\xdb\xf5\xed\x1e+\xcb\xf3\x07\x99'
+
+DEBUG = True
