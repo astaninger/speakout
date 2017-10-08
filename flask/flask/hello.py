@@ -2,7 +2,12 @@ from flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+app.config.from_pyfile('config.py')
+
 mongo = PyMongo(app)
+
+print(dir(mongo))
+
 
 @app.route("/")
 def home():
@@ -21,7 +26,28 @@ def profile(username):
 
 @app.route("/register")
 def register():
-	return render_template('signup.html')
+    SEED_DATA = [
+        {
+            'decade': '1970s',
+            'artist': 'Debby Boone',
+            'song': 'You Light Up My Life',
+            'weeksAtOne': 10
+        },
+        {
+            'decade': '1980s',
+            'artist': 'Olivia Newton-John',
+            'song': 'Physical',
+            'weeksAtOne': 10
+        },
+        {
+            'decade': '1990s',
+            'artist': 'Mariah Carey',
+            'song': 'One Sweet Day',
+            'weeksAtOne': 16
+        }
+    ]
+#    mongo.db['songs'].insert_many(SEED_DATA);
+    return render_template('signup.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
