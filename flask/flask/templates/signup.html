@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<div class = "login">
-		<form action="" method="post" name="login">
+		<form action="/register" method="post" name="login">
 
 			<div class="section">
 				<p>
@@ -73,21 +73,16 @@
 						<input id="email" name="email" size="40" type="email" value=""><br>
 					</p><br>
 					<p>
-						<label for="insecure_password">Password </label>
-						<input id="insecure_password" name="insecure_password" size="40" type="password" value=""><br>
+						<label for="password">Password </label>
+						<input id="password" name="password" size="40" type="password" value=""><br>
 					</p> <br>
 					<p>
-						<form enctype="multipart/form-data" action="uploader.php" method="POST">
-							<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
-							Choose a file to upload: <input name="uploadedfile" type="file" accept="image/*"/><br />
-							<input type="submit" value="Upload File" /> 
-						</form>
+                    Choose a file to upload: <input name="file" type="file" accept="image/*"/><br />
+                    <input type="submit" value="Register" /> 
 					</p> <br><br>
 				</div>
+                
 			</form>
-		</div>
-		<div id="logins">
-			<a class="signup" href="/login">Register
 		</div>
 		
 	</body>

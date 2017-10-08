@@ -14,14 +14,14 @@ def login():
     error = None
     # get db connection, use model
     if request.method == 'POST':
-        email = request.form.email
-        password = request.form.password
+        email = request.form.get('email')
+        password = request.form.get('password')
         user = mongo.db.users.find_one({'email': email})
         print(user)
-        if user is not None and user.password = password:
+        if user is not None and password == user.get('password'):
             session['logged_in'] = True
             session['user_email'] = email
-            return redirect(url_for('profile', name=user.name))
+            return redirect(url_for('profile', name=user.get('name')))
         else:
             error = 'invalid username or password'
     
@@ -41,15 +41,17 @@ def profile(name):
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        print(request.form)
         user_info = {
-            'email': request.form.email,
-            'name': request.form.name,
-            'password': request.form.password or None,
-            'gender': request.form.gender or None,
-            'industry': request.form.industry or None,
+            'email': request.form.get('email'),
+            'name': request.form.get('name'),
+            'password': request.form.get('password'),
+            'gender': request.form.get('gender'),
+            'industry': request.form.get('industry'),
             'posts':[]
         }
         mongo.db.users.insert_one(user_info)
+        print(user_info)
         return redirect(url_for('login'))
     return render_template('signup.html')
 
