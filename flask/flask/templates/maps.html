@@ -7,30 +7,39 @@
     <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
-     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
+      * element that contains the map. */
       #map {
         height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-      }
-    </style>
+    }
+</style>
+<div class="hero1">
+                <h1>Map</h1>
+            </div>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 l6 offset-l3 offset-m2 welcome_login">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
     <div id="map"></div>
     <script>
 
@@ -40,18 +49,23 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
           center: myLatLng
-        });
+      });
 
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
           title: 'Hello World!'
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARO_Ii4y9azyiEPXso0uTcJddUmAPkHSw&callback=initMap">
-    </script>
+      });
+        var marker1 = new google.maps.Marker({
+          position: {lat:-25, lng:130},
+          map: map,
+          title: 'Hello World!'
+      });
+    }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARO_Ii4y9azyiEPXso0uTcJddUmAPkHSw&callback=initMap">
+</script>
 
 </body>
 </html>
