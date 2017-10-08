@@ -16,13 +16,8 @@
      <nav>
         <div class="row">
             <ul class="main-nav">
-                <
                 <li><a href="/maps">Maps</a></li>
                 <li><a href="/stats">Statistics</a></li>
-                {% if session.logged_in %}
-                <li><a href="/profile">Profile</a></li>
-                {% else %}
-                <li><a href="/">Home</a></li>
             </ul>
         </div>
     </nav>
@@ -46,13 +41,13 @@
         </p><br>
     </div>
     
+    <div id="logins">
+        <button class="log" type="submit" value="Login">Login</button>
+
+        <a class="signup" href="/register">Register</a>
+    </div>
 </form>    
 
-</div>
-<div id="logins">
-    <button class="log" type="submit" value="Login">Login</button>
-
-    <a class="signup" href="/register">Register</a>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

@@ -18,10 +18,6 @@
             <ul class="main-nav">
                 <li><a href="/maps">Maps</a></li>
                 <li><a href="/stats">Statistics</a></li>
-                {% if session.logged_in %}
-                <li><a href="/profile">Profile</a></li>
-                {% else %}
-                <li><a href="/">Home</a></li>
             </ul>
         </div>
     </nav>
@@ -31,32 +27,28 @@
 </header>
 <section>
     <p> Post about a positive/negative interaction here:</p>
-    <p>
-        <textarea id="area" name="user_text" rows="5" cols="60"></textarea><br>
-    </p><br>
-         <p>
-            <label for="Choose a type">Choose a type.  The interaction was...</label><br>
-            <select id="gender">
-                <option value="positive">positive</option>
-                <option value="negative">negative</option>
-            </select>
-        </p><br>
-        <p>
-            <label for="topic">Choose an social issue. It had to do with... </label><br>
-            <select id="topic">
-                <option value="women">Women</option>
-                <option value="race">Race</option>
-                <option value="homosexuality">Homosexual</option>
-                <option value="disability">Disable</option>
-                <option value="semite">Semite</option>
-            </select><br><br>
-            <input id="checkBox" type="checkbox"> Catcalling <br>
-            <input id="checkBox" type="checkbox"> Gendered Language<br>
-            <input id="checkBox" type="checkbox"> Pejorative terms
-        </p><br>
-        <p>
-
-        </section>
+    <form action="/post" method="post">
+        <textarea id="area" name="message" rows="5" cols="60"></textarea><br><br>
+        <label for="type">Choose a type.  The interaction was...</label><br>
+        <select id="type" name="type">
+            <option value="positive">positive</option>
+            <option value="negative">negative</option>
+        </select><br>
+        <label for="topic">Choose an social issue. It had to do with... </label><br>
+        <select id="topic" name='topic'>
+            <option value="women">Women</option>
+            <option value="race">Race</option>
+            <option value="homosexuality">Homosexual</option>
+            <option value="disability">Disable</option>
+            <option value="semite">Semite</option>
+        </select><br><br>
+        <input id="checkBox" type="checkbox"> Catcalling <br>
+        <input id="checkBox" type="checkbox"> Gendered Language<br>
+        <input id="checkBox" type="checkbox"> Pejorative terms<br>
+        
+        <input type="submit" value="Post">
+    </form>
+</section>
 
     </body>
     </html>

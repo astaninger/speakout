@@ -15,7 +15,14 @@
                 <div class="row">
                     <ul class="main-nav">
                         <li><a href="/maps">Maps</a></li>
-                        <li><a href="/stats">Statistics</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
+<!--
+                        {% if session.logged_in %}
+                        <li><a href="#">Profile</a></li>
+                        {% else %}
+                        <li><a href="#">Home</a></li>
+                        {% endif %}
+-->
                     </ul>
                 </div>
             </nav>
@@ -49,7 +56,7 @@
 
                     </div>
                     <h3>Post 2</h3>
-                        <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus nec est a consectetur. Sed sit amet varius ex. Suspendisse potenti. Curabitur sed orci mattis, finibus leo a, rhoncus orci. Nulla tempor at eros vel ullamcorper. Maecenas quam est, accumsan vel nulla in, viverra porttitor sapien. Nunc convallis neque sed quam maximus pulvinar. Sed semper justo in gravida interdum. Aenean ultrices, tellus luctus tincidunt placerat, ipsum quam ultricies purus, a euismod augue eros et justo. Nam libero justo, laoreet a eros id, iaculis pharetra nibh. Integer tempus rutrum fermentum.
+                        <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dapibus nec est a consectetur. Sed sit amet varius ex. Suspendisse potenti. Curabitur sed orci mattis, finibus leo a, rhoncus orci. Nulla tempor at eros vel ullamcorper. Maecenas quam est, accumsan vel nulla in, viverra porttitor sapien. Nunc convallis neque sed quam maximus pulvinar. Sed  semper justo in gravida interdum. Aenean ultrices, tellus luctus tincidunt placerat, ipsum quam ultricies purus, a euismod augue eros et justo. Nam libero justo, laoreet a eros id, iaculis pharetra nibh. Integer tempus rutrum fermentum.
                         </p>
                 </div>
                 <div class="col span-1-of-3 post">

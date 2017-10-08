@@ -17,11 +17,8 @@
                     <ul class="main-nav">
                         <li><a href="/maps">Maps</a></li>
                         <li><a href="/stats">Statistics</a></li>
-                        {% if session.logged_in %}
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/post">Post</a></li>
-                {% else %}
-                <li><a href="/">Home</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><a href="/post">Post</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,12 +30,15 @@
         
         <section>
            <img src="">
-           <h4> Isaac Shanley</h4><br>
-           <p> Gender: female </p><br>
-           <p> Race: white </p><br>
-           <p> Industry: government </p><br>
-           <p> Sexual Orientation: gay</p><br>
+           <h4> {{user.name}}</h4><br>
+           <p> Gender: {{user.gender}} </p><br>
+           <p> Race: {{user.race}} </p><br>
+           <p> Industry: {{user.industry}} </p><br>
+           <p> Sexual Orientation: {{user.sexual_orientation}}</p><br>
            <p> Posts: </p>
+            {% for post in posts %}
+            <p>{{post.message}}</p>
+            {% endfor %}
 
         </section>
     
