@@ -68,7 +68,8 @@ def map():
 
 @app.route("/stats")
 def stats():
-    return render_template('stats.html')
+    posts = [x for x in mongo.db.posts.find()]
+    return render_template('stats.html', posts=posts)
 
 @app.route("/post", methods=['GET', 'POST'])
 def post():
@@ -82,6 +83,11 @@ def post():
         mongo.db.posts.insert_one(post_info)
         return redirect(url_for('profile'))
     return render_template('post.html')
+
+@app.route("/newsfeed")
+def newsfeed():
+    posts = [x for x in mongo.db.posts.find()]
+    return render_template('newsfeed.html', posts = posts)
 
 @socketio.on('my event')
 def handle_my_custom_event(json):
