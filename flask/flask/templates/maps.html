@@ -33,6 +33,11 @@
                     <ul class="main-nav">
                         <li><a href="/maps">Maps</a></li>
                         <li><a href="/stats">Statistics</a></li>
+                        {% if session.logged_in %}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/post">Post</a></li>
+                {% else %}
+                <li><a href="/">Home</a></li>
                     </ul>
                 </div>
             </nav>

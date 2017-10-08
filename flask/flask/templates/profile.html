@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Skillfair</title>
-  <meta charset="utf-8"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body>
- <div class="container">
-  <div class="nav">
-    <img src="IMG_9653.jpg" alt="Profile pic" height="60" width="60">
-    <br>
-    <a href="#">$Name</a>
-    <ul>
-      <li>stats</li>
-    </ul>
+    <head>
 
-  </div>
-  <div class="main">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h5> Posts with upvotes/downvotes </h5>
-    </div>
-  </div>
-</footer>
-</body>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
+        <title>Profile -- SpeakOut</title>
+    </head>
+    
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <ul class="main-nav">
+                        <li><a href="/maps">Maps</a></li>
+                        <li><a href="/stats">Statistics</a></li>
+                        {% if session.logged_in %}
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/post">Post</a></li>
+                {% else %}
+                <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <br>
+            <div class="hero1">
+                <a href="/login">Profile</a>
+            </div>
+        </header>
+        
+        <section>
+           <img src="">
+           <h4> Isaac Shanley</h4><br>
+           <p> Gender: female </p><br>
+           <p> Race: white </p><br>
+           <p> Industry: government </p><br>
+           <p> Sexual Orientation: gay</p><br>
+           <p> Posts: </p>
+
+        </section>
+    
+    </body>
+
+</html>

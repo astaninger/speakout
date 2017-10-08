@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>Post -- SpeakOut</title>
+    <link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
+    <meta name=viewport content="width=device-width", initial-scale=1>
+    
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="row">
+            <ul class="main-nav">
+                <li><a href="/maps">Maps</a></li>
+                <li><a href="/stats">Statistics</a></li>
+                {% if session.logged_in %}
+                <li><a href="/profile">Profile</a></li>
+                {% else %}
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero1">
+        <h1>Post</h1>
+    </div>
+</header>
+<section>
+    <p> Post about a positive/negative interaction here:</p>
+    <p>
+        <textarea id="area" name="user_text" rows="5" cols="60"></textarea><br>
+    </p><br>
+         <p>
+            <label for="Choose a type">Choose a type.  The interaction was...</label><br>
+            <select id="gender">
+                <option value="positive">positive</option>
+                <option value="negative">negative</option>
+            </select>
+        </p><br>
+        <p>
+            <label for="topic">Choose an social issue. It had to do with... </label><br>
+            <select id="topic">
+                <option value="women">Women</option>
+                <option value="race">Race</option>
+                <option value="homosexuality">Homosexual</option>
+                <option value="disability">Disable</option>
+                <option value="semite">Semite</option>
+            </select><br><br>
+            <input id="checkBox" type="checkbox"> Catcalling <br>
+            <input id="checkBox" type="checkbox"> Gendered Language<br>
+            <input id="checkBox" type="checkbox"> Pejorative terms
+        </p><br>
+        <p>
+
+        </section>
+
+    </body>
+    </html>
