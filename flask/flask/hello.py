@@ -60,8 +60,11 @@ def register():
     return render_template('register.html')
 
 @app.route("/map")
-def maps():
-    return render_template('maps.html')
+def map():
+    coords = []
+    for x in mongo.db.coords.find():
+        coords.append({'lat': x['lat'], 'lng': x['lng']})
+    return render_template('maps.html', coords=coords)
 
 @app.route("/stats")
 def stats():
@@ -82,8 +85,8 @@ def post():
 
 @socketio.on('my event')
 def handle_my_custom_event(json):
-    print('received json: ' + str(json))
-
+    print(json)
+    mongo.db.coords.insert_one(json);
 
 if __name__ == "__main__":
     socketio.run(app)

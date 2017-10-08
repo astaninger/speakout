@@ -56,10 +56,14 @@
           center: myLatLng
       });
 
-        var marker = new google.maps.Marker({
-          position: myLatLng, //add {lat: , lng: } here
-          map: map,
-          icon: //either happy or mad icons in folder
+        var coords = {{coords|tojson}};
+
+        coords.forEach(function(coord){
+          new google.maps.Marker({
+            position: coord, //add {lat: , lng: } here
+            map: map
+          //icon: //either happy or mad icons in folder
+          });
         });
 
     }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
  <meta charset="utf-8">
+ <script type="text/javascript" src="//cdnjs.buttflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
     <style>
       /* Always set the map height explicitly to define the size of the div
       * element that contains the map. */
@@ -71,16 +72,23 @@ var map;
 function initialize() {
   var myLatlng = new google.maps.LatLng(37.8719,122.2585);
   var myOptions = {
-    zoom: 4,
+    zoom: 6,
     center: myLatlng,
   }
   map = new google.maps.Map(document.getElementById("map"), myOptions);
+
 
   var listener1 = google.maps.event.addListener(map, 'click', function(event) {
     google.maps.event.removeListener(listener1);
     placeMarker(event.latLng);
     var latitude = (event.latLng.lat());
     var longitude = (event.latLng.lng());
+    var socket = io.connect('http://localhost:5000');
+    socket.on('connect', function() {
+        console.log(latitude, longitude);
+        socket.emit('my event', {lat: latitude, lng: longitude});
+    });
+
   });
 }
 
@@ -91,7 +99,6 @@ function placeMarker(location) {
   });
 
   map.setCenter(location);
-  console.log(latitude);
 }
 </script>
 <script async defer
