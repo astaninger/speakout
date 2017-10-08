@@ -37,7 +37,7 @@
            <p> Sexual Orientation: {{user.sexual_orientation}}</p><br>
            <p> Posts: </p>
             {% for post in posts %}
-            <p>{{post.message}}</p>
+            <p>{{post.message}, {post.topic}, {post.type}, {post.cat}, {post.gen}, {post.pej}}</p>
             {% endfor %}
 
         </section>

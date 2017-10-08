@@ -49,7 +49,7 @@
     <script>
 
       function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+        var myLatLng = {lat: 37.8716, lng: 122.2727};
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 4,
@@ -57,15 +57,11 @@
       });
 
         var marker = new google.maps.Marker({
-          position: myLatLng,
+          position: myLatLng, //add {lat: , lng: } here
           map: map,
-          title: 'Hello World!'
-      });
-        var marker1 = new google.maps.Marker({
-          position: {lat:-25, lng:130},
-          map: map,
-          title: 'Hello World!'
-      });
+          icon: //either happy or mad icons in folder
+        });
+
     }
 </script>
 <script async defer

@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_pymongo import PyMongo
+from flask_socketio import SocketIO
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 mongo = PyMongo(app)
+socketio = SocketIO(app)
 
 @app.route("/")
 def home():
@@ -57,7 +59,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
-@app.route("/maps")
+@app.route("/map")
 def maps():
     return render_template('maps.html')
 
@@ -78,5 +80,11 @@ def post():
         return redirect(url_for('profile'))
     return render_template('post.html')
 
+@socketio.on('my event')
+def handle_my_custom_event(json):
+    print('received json: ' + str(json))
+
+
 if __name__ == "__main__":
-	app.run()
+    socketio.run(app)
+	#app.run()

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
+        <title>Newsfeed -- SpeakOut</title>
+    </head>
+    
+    <body>
+        <header>
+            <br>
+            <div class="hero1">
+                <a href="/login">Profile</a>
+            </div>
+        </header>
+        
+        <section>
+            {% for post in posts %}
+            <p>{{post.message}}</p>
+            {% endfor %}
+
+        </section>
+    
+    </body>
+
+</html>

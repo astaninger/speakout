@@ -8,8 +8,21 @@
     <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
-    <meta name=viewport content="width=device-width", initial-scale=1>
-    
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+ <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+      #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
 </head>
 <body>
     <header>
@@ -42,13 +55,47 @@
             <option value="disability">Disable</option>
             <option value="semite">Semite</option>
         </select><br><br>
-        <input id="checkBox" type="checkbox"> Catcalling <br>
-        <input id="checkBox" type="checkbox"> Gendered Language<br>
-        <input id="checkBox" type="checkbox"> Pejorative terms<br>
+        <input id="checkBox" type="checkbox" name="cat"> Catcalling <br>
+        <input id="checkBox" type="checkbox" name="gen"> Gendered Language<br>
+        <input id="checkBox" type="checkbox" name="pej"> Pejorative terms<br><br>
         
         <input type="submit" value="Post">
+
+     
     </form>
 </section>
+<div id="map"></div>
 
-    </body>
-    </html>
+ <script>
+var map;
+function initialize() {
+  var myLatlng = new google.maps.LatLng(37.8719,122.2585);
+  var myOptions = {
+    zoom: 4,
+    center: myLatlng,
+  }
+  map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+  var listener1 = google.maps.event.addListener(map, 'click', function(event) {
+    google.maps.event.removeListener(listener1);
+    placeMarker(event.latLng);
+    var latitude = (event.latLng.lat());
+    var longitude = (event.latLng.lng());
+  });
+}
+
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+      position: location, 
+      map: map
+  });
+
+  map.setCenter(location);
+  console.log(latitude);
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARO_Ii4y9azyiEPXso0uTcJddUmAPkHSw&callback=initialize">
+</script>
+</body>
+</html>
