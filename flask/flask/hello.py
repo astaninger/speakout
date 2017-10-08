@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+fom flask import Flask, render_template, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -45,6 +45,14 @@ def register():
     ]
 #    mongo.db['songs'].insert_many(SEED_DATA);
     return render_template('signup.html')
+
+@app.route("/maps")
+def maps():
+    return render_template('maps.html')
+
+@app.route("/stats")
+def stats():
+    return render_template('stats.html')
 
 if __name__ == "__main__":
 	app.run(debug=True)
