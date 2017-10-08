@@ -6,30 +6,26 @@
 	<link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-	<title> Register -- SpeakOut</title>
+	<title> Sign Up -- SpeakOut</title>
+	<div class="hero1">
+		<h1>Sign Up</h1>
+	</div>
 </head>
 <body>
-    <header>
-             <nav>
-
-        <div class="row">
-            <ul class="main-nav">
-                <li><a href="/maps">Maps</a></li>
-                <li><a href="/stats">Statistics</a></li>
-                {% if session.logged_in %}
-                <li><a href="/profile">Profile</a></li>
-                {% else %}
-                <li><a href="/">Home</a></li>
-            </ul>
-        </div>
-    </nav>
-        <div class="hero1">
-        <h1>Register</h1>
-    </div>
-    </header>
-
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m8 l6 offset-l3 offset-m2 welcome_login">
+				<div class="logo">
+					<br>
+					<br>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class = "login">
-		<form action="" method="post" name="login">
+		<form action="/register" method="post" name="login">
 
 			<div class="section">
 				<p>
@@ -40,60 +36,56 @@
 					<p>
 
 						<label for="gender">Gender</label><br>
-						<select id="gender">
-							<option value="female">Female</option>
-							<option value="male">Male</option>
-							<option value="non-binary">Non-binary</option>
-							<option value="other">Other</option>
+						<select id="gender" name='gender'>
+							<option value="Female">Female</option>
+							<option value="Male">Male</option>
+							<option value="Non-Binary">Non-binary</option>
+							<option value="Other">Other</option>
 						</select>
 					</p><br>
 					<p>
 
 						<label for="race">Race</label><br>
-						<select id="race">
-							<option value="black">Black</option>
-							<option value="latinx">Latinx</option>
-							<option value="asian">Asian</option>
-							<option value="indian">Indian</option>
-							<option value="white">White</option>
-							<option value="other"> Other</option>
+						<select id="race" name='race'>
+							<option value="Black">Black</option>
+							<option value="Latin">Latinx</option>
+							<option value="Asian">Asian</option>
+							<option value="Indian">Indian</option>
+							<option value="White">White</option>
+							<option value="Other"> Other</option>
 						</select><br>
 					</p><br>
 					<p>
 
 						<label for="industry">Industry</label><br>
 						<!--<input id="industry" name="industry" size="40" type="text" value=""><br>-->
-						<select id="industry">
-							<option value="tech">Tech</option>
-							<option value="education">Education</option>
-							<option value="finance">Finance</option>
-							<option value="health">Health</option>
-							<option value="government">Government</option>
-							<option value="other"> Other</option>
+						<select id="industry" name="industry">
+							<option value="Tech">Tech</option>
+							<option value="Education">Education</option>
+							<option value="Finance">Finance</option>
+							<option value="Health">Health</option>
+							<option value="Government">Government</option>
+							<option value="Other"> Other</option>
 						</select>
 						<br><br>
-						<label for="sexual_orientation">Sexual orientation</label>
-						<input id="sexual_orientation" name="sexual_orientation" size="40" type="text" value="">
-						<br><br>
+
+                        <label for="sexual_orientation">Sexual Orientation</label>
+                        <input id="sexual_orientation" name="sexual_orientation" size="40" type="text">
+                        <br><br>
 						<label for="email">Email</label>
 						<input id="email" name="email" size="40" type="email" value=""><br>
 					</p><br>
 					<p>
-						<label for="insecure_password">Password </label>
-						<input id="insecure_password" name="insecure_password" size="40" type="password" value=""><br>
+						<label for="password">Password </label>
+						<input id="password" name="password" size="40" type="password" value=""><br>
 					</p> <br>
 					<p>
-						<form enctype="multipart/form-data" action="uploader.php" method="POST">
-							<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
-							Choose a file to upload: <input name="uploadedfile" type="file" accept="image/*"/><br />
-							<input type="submit" value="Upload File" /> 
-						</form>
+                    Choose a file to upload: <input name="file" type="file" accept="image/*"/><br />
+                    <input type="submit" value="Register" /> 
 					</p> <br><br>
 				</div>
+                
 			</form>
-		</div>
-		<div id="logins">
-			<a class="signup" href="/login">Register
 		</div>
 		
 	</body>
