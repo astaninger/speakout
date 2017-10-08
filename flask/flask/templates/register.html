@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+	<title> Register -- SpeakOut</title>
+</head>
+<body>
+    <header>
+             <nav>
+
+        <div class="row">
+            <ul class="main-nav">
+                <li><a href="/maps">Maps</a></li>
+                <li><a href="/stats">Statistics</a></li>
+                {% if session.logged_in %}
+                <li><a href="/profile">Profile</a></li>
+                {% else %}
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class="hero1">
+        <h1>Register</h1>
+    </div>
+    </header>
+
+	<div class = "login">
+		<form action="" method="post" name="login">
+
+			<div class="section">
+				<p>
+					<label for="name">Name</label>
+					<input id="name" name="name" size="34" type="text" value=""><br>
+				</p><br>
+				<p>
+					<p>
+
+						<label for="gender">Gender</label><br>
+						<select id="gender">
+							<option value="female">Female</option>
+							<option value="male">Male</option>
+							<option value="non-binary">Non-binary</option>
+							<option value="other">Other</option>
+						</select>
+					</p><br>
+					<p>
+
+						<label for="race">Race</label><br>
+						<select id="race">
+							<option value="black">Black</option>
+							<option value="latinx">Latinx</option>
+							<option value="asian">Asian</option>
+							<option value="indian">Indian</option>
+							<option value="white">White</option>
+							<option value="other"> Other</option>
+						</select><br>
+					</p><br>
+					<p>
+
+						<label for="industry">Industry</label><br>
+						<!--<input id="industry" name="industry" size="40" type="text" value=""><br>-->
+						<select id="industry">
+							<option value="tech">Tech</option>
+							<option value="education">Education</option>
+							<option value="finance">Finance</option>
+							<option value="health">Health</option>
+							<option value="government">Government</option>
+							<option value="other"> Other</option>
+						</select>
+						<br><br>
+						<label for="sexual_orientation">Sexual orientation</label>
+						<input id="sexual_orientation" name="sexual_orientation" size="40" type="text" value="">
+						<br><br>
+						<label for="email">Email</label>
+						<input id="email" name="email" size="40" type="email" value=""><br>
+					</p><br>
+					<p>
+						<label for="insecure_password">Password </label>
+						<input id="insecure_password" name="insecure_password" size="40" type="password" value=""><br>
+					</p> <br>
+					<p>
+						<form enctype="multipart/form-data" action="uploader.php" method="POST">
+							<input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+							Choose a file to upload: <input name="uploadedfile" type="file" accept="image/*"/><br />
+							<input type="submit" value="Upload File" /> 
+						</form>
+					</p> <br><br>
+				</div>
+			</form>
+		</div>
+		<div id="logins">
+			<a class="signup" href="/login">Register
+		</div>
+		
+	</body>
+	</html>
