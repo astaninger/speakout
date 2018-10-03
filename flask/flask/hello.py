@@ -3,7 +3,9 @@ from flask_pymongo import PyMongo
 from flask_socketio import SocketIO
 
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
+#app.config.from_pyfile('config.py')
+app.config["MONGO_URI"] = 'mongodb://test123:test123@ds030817.mlab.com:30817/testpls123'
+
 mongo = PyMongo(app)
 socketio = SocketIO(app)
 
