@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <title>Statistics -- SpeakOut</title>
+    <link rel="stylesheet" type="text/css" href="../static/vendor/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="../static/vendor/css/grid.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../static/resources/css/style.css">
+    <meta name=viewport content="width=device-width", initial-scale=1>
+    
+</head>
+<body>
+    <header>
+      <nav>
+        <div class="row">
+            <ul class="main-nav">
+                <li><a href="/map">Maps</a></li>
+                <li><a href="/stats">Statistics</a></li>
+                {% if session.logged_in %}
+                <li><a href="/profile">Profile</a></li>
+                {% else %}
+                <li><a href="#">Home</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="hero1">
+        <h1>Site Statistics</h1>
+    </div>
+</header>
+<section>
+    <h2> Most popular</h2> 
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>Positive interaction</th> 
+            <th>Negative interaction</th>
+        </tr>
+        <tr>
+            <td>Day</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Week</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td></td> 
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>Positive location</th> 
+            <th>Negative location</th>
+        </tr>
+        <tr>
+            <td>Day</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Week</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td></td> 
+            <td></td>
+        </tr>
+    </table>
+    <br>
+    <table style="width:100%">
+        <tr>
+            <th></th>
+            <th>Positive interaction of the day</th> 
+            <th>Negative interaction of the day</th>
+        </tr>
+        <tr>
+            <td>Women</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Racial</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Homosexual</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Disabled</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Immigrant</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td>Semitic</td>
+            <td></td> 
+            <td></td>
+        </tr>
+    </table>
+</section>
+<h2> Count</h2>
+<label>catcalls:</label><br>
+<label>gendered language:</label><br>
+<label>pejorative terms:</label>
+
+</body>
+</html>
